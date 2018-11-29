@@ -1,0 +1,131 @@
+﻿  stdafx.cpp
+  WAVheader.cpp
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(9): error C2061: syntax error: identifier 'WAV_HEADER'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(12): error C2065: 'BYTE': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(12): error C2146: syntax error: missing ';' before identifier 'tempBuff'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(12): error C2065: 'tempBuff': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(14): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(14): error C2228: left of '.HeaderSize' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(14): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(17): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(17): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(17): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(17): error C2065: 'WAV_HEADER_RIFF': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(18): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(18): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(18): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(18): error C2065: 'WAV_HEADER_FMT': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(19): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(19): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(19): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(19): error C2228: left of '.ChunkID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(20): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(20): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(20): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(20): error C2228: left of '.ChunkID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(21): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(21): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(21): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(21): error C2228: left of '.ChunkID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(22): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(22): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(22): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(22): error C2228: left of '.ChunkID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(24): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(24): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(24): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(24): error C2228: left of '.Format' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(25): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(25): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(25): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(25): error C2228: left of '.Format' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(26): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(26): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(26): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(26): error C2228: left of '.Format' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(27): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(27): error C2228: left of '.riff' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(27): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(27): error C2228: left of '.Format' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(29): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(29): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(29): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(29): error C2228: left of '.SubChunk1ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(30): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(30): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(30): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(30): error C2228: left of '.SubChunk1ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(31): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(31): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(31): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(31): error C2228: left of '.SubChunk1ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(32): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(32): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(32): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(32): error C2228: left of '.SubChunk1ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(34): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(34): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(34): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(34): error C2228: left of '.AudioFormat' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(36): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(36): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(36): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(36): error C2228: left of '.BitsPerSample' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(38): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(38): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(38): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(38): error C2228: left of '.NumChannels' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(40): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(40): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(40): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(40): error C2228: left of '.SampleRate' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(42): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(42): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(42): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(42): error C2228: left of '.BlockAlign' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(45): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(45): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(45): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(45): error C2228: left of '.SubChunk1Size' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(47): error C2065: 'tempBuff': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(47): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(47): error C2228: left of '.fmt' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(47): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(47): error C2228: left of '.SubChunk1Size' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(50): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(50): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(50): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(50): error C2065: 'WAV_HEADER_DATA': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(51): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(51): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(51): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(51): error C2228: left of '.SubChunk2ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(52): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(52): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(52): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(52): error C2228: left of '.SubChunk2ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(53): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(53): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(53): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(53): error C2228: left of '.SubChunk2ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(54): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(54): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(54): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(54): error C2228: left of '.SubChunk2ID' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(56): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(56): error C2228: left of '.data' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(56): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(56): error C2228: left of '.SubChunk2Size' must have class/struct/union
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(59): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(59): error C2228: left of '.HeaderSize' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(59): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(69): error C2061: syntax error: identifier 'WAV_HEADER'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(72): error C2065: 'inWAVhdr': undeclared identifier
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(72): error C2228: left of '.HeaderSize' must have class/struct/union
+  c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(72): note: type is 'unknown-type'
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(87): error C3861: 'exit': identifier not found
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\wavheader.cpp(83): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+  model0.cpp
+c:\users\uros\onedrive\documents\visual studio 2015\projects\model0\model0\model0.cpp(146): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Generating Code...
