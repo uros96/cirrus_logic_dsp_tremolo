@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\aadsp2\model_0\model_0\main.cpp(9): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  d:\aadsp2\model_0\model_0\main.cpp(9): note: command-line arguments:  see previous definition of '_CRT_SECURE_NO_WARNINGS'
+d:\aadsp2\model_0\model_0\main.cpp(28): warning C4101: 'j': unreferenced local variable
+d:\aadsp2\model_0\model_0\main.cpp(128): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  model_0.vcxproj -> D:\aadsp2\model_0\Debug\model_0.exe
+  model_0.vcxproj -> D:\aadsp2\model_0\Debug\model_0.pdb (Full PDB)
