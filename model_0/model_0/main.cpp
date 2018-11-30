@@ -25,30 +25,16 @@ bool check_mode() {
 void processing()
 {
 	init(&tremolo);
-	int i, j;
-	double* left_in = sampleBuffer[0];
-	double* right_in = sampleBuffer[1];
-	double* left_out = sampleBuffer[0];
-	double* right_out = sampleBuffer[1];
-	double* lsOutput = sampleBuffer[2];
-	double* rsOutput = sampleBuffer[3];
+	int i;
 
 	for (i = 0; i < BLOCK_SIZE; i++)
 	{
-		*left_out = (*left_in) * dB2double;
-		*right_out = (*right_in) * dB2double;
-	}
-	
-	if (check_mode() == true) 
-	{
-		for (i = 0; i < BLOCK_SIZE; i++)
-		{
-			*lsOutput = *left_in * dB2double;
-			processBlock(lsOutput, lsOutput, &tremolo, BLOCK_SIZE);
-
-			*rsOutput = *right_in * dB2double;
-			processBlock(rsOutput, rsOutput, &tremolo, BLOCK_SIZE);
-		}		
+		*sampleBuffer[0] = (*sampleBuffer[0]) * dB2double;
+		*sampleBuffer[1] = (*sampleBuffer[1]) * dB2double;
+		*sampleBuffer[2] = *sampleBuffer[0] * dB2double;
+		processBlock(sampleBuffer[2], sampleBuffer[2], &tremolo, BLOCK_SIZE);
+		*sampleBuffer[3] = *sampleBuffer[1] * dB2double;
+		processBlock(sampleBuffer[3], sampleBuffer[3], &tremolo, BLOCK_SIZE);
 	}
 }
 
@@ -81,7 +67,8 @@ int main(int argc, char* argv[])
 	// Set up output WAV header
 	//-------------------------------------------------	
 	outputWAVhdr = inputWAVhdr;
-	outputWAVhdr.fmt.NumChannels = inputWAVhdr.fmt.NumChannels; // change number of channels
+//	outputWAVhdr.fmt.NumChannels = inputWAVhdr.fmt.NumChannels; // change number of channels
+	outputWAVhdr.fmt.NumChannels = 4; // change number of channels
 
 	int oneChannelSubChunk2Size = inputWAVhdr.data.SubChunk2Size / inputWAVhdr.fmt.NumChannels;
 	int oneChannelByteRate = inputWAVhdr.fmt.ByteRate / inputWAVhdr.fmt.NumChannels;
