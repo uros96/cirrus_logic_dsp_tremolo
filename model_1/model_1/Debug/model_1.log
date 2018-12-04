@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_1\model_1\tremolo2.h(29): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_1\model_1\tremolo2.h(34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_1\model_1\tremolo2.h(50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_1\model_1\tremolo2.h(50): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_1\model_1\main.cpp(115): warning C4244: '=': conversion from 'DSPfract' to 'int', possible loss of data
+  model_1.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_1\Debug\model_1.exe
+  model_1.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_1\Debug\model_1.pdb (Full PDB)

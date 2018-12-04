@@ -5,36 +5,30 @@
 #include "WAVheader.h"
 #include "tremolo2.h"
 
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-
 #define BLOCK_SIZE 16
-#define MAX_NUM_CHANNEL 2
-#define MAX_NUM_CHANNEL_MODE2 4
+#define MAX_NUM_CHANNEL 5
 
-double sampleBuffer[MAX_NUM_CHANNEL_MODE2][BLOCK_SIZE];
-const double dB2double = 0.630957;
+double sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
+double dB2double = 0.630957;
 tremolo_struct_t tremolo;
 bool mode = true;
-
-bool check_mode() {
-	return (mode == true) ? true : false;
-}
 
 void processing()
 {
 	init(&tremolo);
 	int i;
-
 	for (i = 0; i < BLOCK_SIZE; i++)
 	{
-		*sampleBuffer[0] = (*sampleBuffer[0]) * dB2double;
-		*sampleBuffer[1] = (*sampleBuffer[1]) * dB2double;
-		*sampleBuffer[2] = *sampleBuffer[0] * dB2double;
-		processBlock(sampleBuffer[2], sampleBuffer[2], &tremolo, BLOCK_SIZE);
-		*sampleBuffer[3] = *sampleBuffer[1] * dB2double;
-		processBlock(sampleBuffer[3], sampleBuffer[3], &tremolo, BLOCK_SIZE);
+		sampleBuffer[0][i] = sampleBuffer[0][i] * dB2double;
+		sampleBuffer[1][i] = sampleBuffer[1][i] * dB2double;
+	}
+	if (mode)
+	{
+//		for (i = 0; i < BLOCK_SIZE; i++)
+//		{
+			processBlock(sampleBuffer[0], sampleBuffer[3], &tremolo, BLOCK_SIZE);
+			processBlock(sampleBuffer[1], sampleBuffer[4], &tremolo, BLOCK_SIZE);
+//		}
 	}
 }
 
@@ -48,7 +42,7 @@ int main(int argc, char* argv[])
 	WAV_HEADER outputWAVhdr;
 
 	// Init channel buffers
-	for (int i = 0; i<MAX_NUM_CHANNEL_MODE2; i++)
+	for (int i = 0; i<MAX_NUM_CHANNEL; i++)
 		memset(&sampleBuffer[i], 0, BLOCK_SIZE);
 
 	// Open input and output wav files
@@ -58,7 +52,10 @@ int main(int argc, char* argv[])
 	strcpy_s(WavOutputName, argv[2]);
 	wav_out = OpenWavFileForRead(WavOutputName, "wb");
 	//-------------------------------------------------
-	mode = (argv[3] == 0) ? true : false;
+
+	mode = ((argc >= 4) && (atoi(argv[3]) == 1)) ? true : false;
+	dB2double = (argc >= 5) ? pow(10, atoi(argv[4])/20) : 0.630957;
+
 	// Read input wav header
 	//-------------------------------------------------
 	ReadWavHeader(wav_in, inputWAVhdr);
@@ -68,7 +65,7 @@ int main(int argc, char* argv[])
 	//-------------------------------------------------	
 	outputWAVhdr = inputWAVhdr;
 //	outputWAVhdr.fmt.NumChannels = inputWAVhdr.fmt.NumChannels; // change number of channels
-	outputWAVhdr.fmt.NumChannels = 4; // change number of channels
+	outputWAVhdr.fmt.NumChannels = (mode) ? 5 : 2; // change number of channels
 
 	int oneChannelSubChunk2Size = inputWAVhdr.data.SubChunk2Size / inputWAVhdr.fmt.NumChannels;
 	int oneChannelByteRate = inputWAVhdr.fmt.ByteRate / inputWAVhdr.fmt.NumChannels;
