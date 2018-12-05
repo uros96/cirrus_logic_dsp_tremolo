@@ -7,8 +7,8 @@
 #include "stdafx.h"
 #include "common.h"
 
-DSPfract sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
-DSPfract dB2double = 0.630957;
+double sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
+double dB2double = 0.630957;
 tremolo_struct_t tremolo;
 enum mode_t
 { 
@@ -20,19 +20,39 @@ mode_t mode = MODE_0;
 
 void processing()
 {
-	init(&tremolo);
-	DSPfract* p;
+	//DSPfract* p;
+	int i;
+//	for (p = *sampleBuffer; p < *sampleBuffer + BLOCK_SIZE; p++) 
+//	{
+//		*p = *p * dB2double;
+//		*(p+16) = *(p+16) * dB2double;
+//	}
 	
-	for (p = sampleBuffer[0]; p < sampleBuffer[0] + BLOCK_SIZE; p++) 
+	double* left_in = sampleBuffer[0];
+	double* right_in = sampleBuffer[1];
+	double* left_out = sampleBuffer[0];
+	double* right_out = sampleBuffer[1];
+	double* left_s_out = sampleBuffer[2];
+	double* right_s_out = sampleBuffer[3];
+
+	for (i = 0; i < BLOCK_SIZE; i++)
 	{
-		*p = *p * dB2double;
-		*(p+16) = *(p+16) * dB2double;
+		*left_out = *left_in * dB2double;
+		*right_out = *right_out * dB2double;
+
+		left_in++;
+		left_out++;
+		right_in++;
+		right_out++;
 	}
-	
+
+	left_out -= BLOCK_SIZE;
+	right_out -= BLOCK_SIZE;
+
 	if (mode == MODE_1)
 	{
-		processBlock(*sampleBuffer, *(sampleBuffer + 3), &tremolo, BLOCK_SIZE);
-		processBlock(*(sampleBuffer + 1), *(sampleBuffer + 4), &tremolo, BLOCK_SIZE);
+		processBlock(left_out, left_s_out, &tremolo, BLOCK_SIZE);
+		processBlock(right_out, right_s_out, &tremolo, BLOCK_SIZE);
 	}
 }
 
@@ -46,7 +66,7 @@ int main(int argc, char* argv[])
 	WAV_HEADER outputWAVhdr;
 
 	// Init channel buffers
-	for (DSPint i = 0; i<MAX_NUM_CHANNEL; i++)
+	for (int i = 0; i<MAX_NUM_CHANNEL; i++)
 		memset(&sampleBuffer[i], 0, BLOCK_SIZE);
 
 	// Open input and output wav files
@@ -69,7 +89,7 @@ int main(int argc, char* argv[])
 	//-------------------------------------------------	
 	outputWAVhdr = inputWAVhdr;
 //	outputWAVhdr.fmt.NumChannels = inputWAVhdr.fmt.NumChannels; // change number of channels
-	outputWAVhdr.fmt.NumChannels = (mode == MODE_0) ? 2 : 5; // change number of channels
+	outputWAVhdr.fmt.NumChannels = (mode == MODE_0) ? 2 : 4; // change number of channels
 
 	int oneChannelSubChunk2Size = inputWAVhdr.data.SubChunk2Size / inputWAVhdr.fmt.NumChannels;
 	int oneChannelByteRate = inputWAVhdr.fmt.ByteRate / inputWAVhdr.fmt.NumChannels;
@@ -91,6 +111,8 @@ int main(int argc, char* argv[])
 		int BytesPerSample = inputWAVhdr.fmt.BitsPerSample / 8;
 		const double SAMPLE_SCALE = -(double)(1 << 31);		//2^31
 		int iNumSamples = inputWAVhdr.data.SubChunk2Size / (inputWAVhdr.fmt.NumChannels*inputWAVhdr.fmt.BitsPerSample / 8);
+
+		init(&tremolo);
 
 		// exact file length should be handled correctly...
 		for (int i = 0; i<iNumSamples / BLOCK_SIZE; i++)

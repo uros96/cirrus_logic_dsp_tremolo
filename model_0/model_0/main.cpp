@@ -6,7 +6,7 @@
 #include "tremolo2.h"
 
 #define BLOCK_SIZE 16
-#define MAX_NUM_CHANNEL 5
+#define MAX_NUM_CHANNEL 4
 
 double sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
 double dB2double = 0.630957;
@@ -15,7 +15,6 @@ bool mode = true;
 
 void processing()
 {
-	init(&tremolo);
 	int i;
 	for (i = 0; i < BLOCK_SIZE; i++)
 	{
@@ -24,11 +23,8 @@ void processing()
 	}
 	if (mode)
 	{
-//		for (i = 0; i < BLOCK_SIZE; i++)
-//		{
-			processBlock(sampleBuffer[0], sampleBuffer[3], &tremolo, BLOCK_SIZE);
-			processBlock(sampleBuffer[1], sampleBuffer[4], &tremolo, BLOCK_SIZE);
-//		}
+		processBlock(sampleBuffer[0], sampleBuffer[2], &tremolo, BLOCK_SIZE);
+		processBlock(sampleBuffer[1], sampleBuffer[3], &tremolo, BLOCK_SIZE);
 	}
 }
 
@@ -53,6 +49,8 @@ int main(int argc, char* argv[])
 	wav_out = OpenWavFileForRead(WavOutputName, "wb");
 	//-------------------------------------------------
 
+	init(&tremolo);
+
 	mode = ((argc >= 4) && (atoi(argv[3]) == 1)) ? true : false;
 	dB2double = (argc >= 5) ? pow(10, atoi(argv[4])/20) : 0.630957;
 
@@ -65,7 +63,7 @@ int main(int argc, char* argv[])
 	//-------------------------------------------------	
 	outputWAVhdr = inputWAVhdr;
 //	outputWAVhdr.fmt.NumChannels = inputWAVhdr.fmt.NumChannels; // change number of channels
-	outputWAVhdr.fmt.NumChannels = (mode) ? 5 : 2; // change number of channels
+	outputWAVhdr.fmt.NumChannels = (mode) ? 4 : 2; // change number of channels
 
 	int oneChannelSubChunk2Size = inputWAVhdr.data.SubChunk2Size / inputWAVhdr.fmt.NumChannels;
 	int oneChannelByteRate = inputWAVhdr.fmt.ByteRate / inputWAVhdr.fmt.NumChannels;

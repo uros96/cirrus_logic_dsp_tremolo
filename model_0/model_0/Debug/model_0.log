@@ -1,4 +1,4 @@
 ﻿  main.cpp
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_0\model_0\main.cpp(112): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_0\model_0\main.cpp(109): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   model_0.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_0\Debug\model_0.exe
   model_0.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_0\Debug\model_0.pdb (Full PDB)

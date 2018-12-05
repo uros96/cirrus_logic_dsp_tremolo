@@ -1,12 +1,5 @@
-﻿  WAVheader.cpp
-  tremolo2.cpp
-  stdafx.cpp
-  main.cpp
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\tremolo2.h(29): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\tremolo2.h(34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\tremolo2.h(50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\tremolo2.h(50): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\main.cpp(115): warning C4244: '=': conversion from 'DSPfract' to 'int', possible loss of data
-  Generating Code...
+﻿  main.cpp
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\main.cpp(129): warning C4244: '=': conversion from 'DSPfract' to 'DSPint', possible loss of data
+c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\main.cpp(207): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   model_2.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.exe
   model_2.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.pdb (Full PDB)
