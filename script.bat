@@ -18,3 +18,5 @@ cd ..\..
 
 PCMCompare "C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\OutStreams\output_model_0.wav" "C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\OutStreams\output_model_1.wav" > C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\logs\cmp0vs1.txt
 PCMCompare "C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\OutStreams\output_model_1.wav" "C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\OutStreams\output_model_2.wav" > C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\logs\cmp1vs2.txt
+
+pause

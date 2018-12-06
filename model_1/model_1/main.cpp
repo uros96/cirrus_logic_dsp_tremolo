@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
 				}
 			}
 
-			processing();
+			processing();	
 
 			for (int j = 0; j<BLOCK_SIZE; j++)
 			{

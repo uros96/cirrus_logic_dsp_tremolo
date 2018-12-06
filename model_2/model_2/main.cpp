@@ -3,51 +3,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "WAVheader.h"
-//#include "tremolo2.h"
 #include <math.h>
-
 #include "stdafx.h"
 #include "common.h"
-
-#define SAMPLE_RATE 48000
-#define BLOCK_SIZE 16
-#define PI 3.14159265358979323846
-
-typedef struct {
-	DSPint numChannels;
-
-	DSPfract LFO_frequency;  // LFO frequency (Hz)
-
-	DSPfract depth;      // Depth of effect (0-1)
-
-	DSPfract lfoPhase;
-
-	DSPfract inverseSampleRate;
-} tremolo_struct_t;
-
-DSPfract sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
-DSPfract dB2double = 0.630957;
-DSPfract* input;
-DSPfract* output;
-DSPfract phase;
-DSPfract* left = sampleBuffer[0];
-DSPfract* right = sampleBuffer[1];
-DSPfract* left_s = sampleBuffer[2];
-DSPfract* right_s = sampleBuffer[3];
-
-tremolo_struct_t tremolo;
-enum mode_t
-{ 
-	MODE_0, 
-	MODE_1 
-};
-
-mode_t mode = MODE_0;
-
-void processing();
-void init();
-void processBlock();
-DSPfract gen_sine_wave();
+#include "model_2.h"
+#include "stdfix_emu.h"
+#include "fixed_point_math.h"
 
 DSPint main(DSPint argc, char* argv[])
 {
@@ -59,8 +20,14 @@ DSPint main(DSPint argc, char* argv[])
 	WAV_HEADER outputWAVhdr;
 
 	// Init channel buffers
-	for (DSPint i = 0; i<MAX_NUM_CHANNEL; i++)
-		memset(&sampleBuffer[i], 0, BLOCK_SIZE);
+	for (DSPint i = 0; i < MAX_NUM_CHANNEL; i++)
+	{
+		for (DSPint j = 0; j < BLOCK_SIZE; j++)
+		{
+			sampleBuffer[i][j] = FRACT_NUM(0.0);
+		}
+	}
+//		memset(&sampleBuffer[i], 0, BLOCK_SIZE);
 
 	// Open input and output wav files
 	//-------------------------------------------------
@@ -116,7 +83,7 @@ DSPint main(DSPint argc, char* argv[])
 					sample = 0; //debug
 					fread(&sample, BytesPerSample, 1, wav_in);
 					sample = sample << (32 - inputWAVhdr.fmt.BitsPerSample); // force signextend
-					sampleBuffer[k][j] = sample / SAMPLE_SCALE;				// scale sample to 1.0/-1.0 range		
+					sampleBuffer[k][j] = (DSPfract) sample / SAMPLE_SCALE;				// scale sample to 1.0/-1.0 range		
 				}
 			}
 
@@ -126,7 +93,7 @@ DSPint main(DSPint argc, char* argv[])
 			{
 				for (DSPint k = 0; k<outputWAVhdr.fmt.NumChannels; k++)
 				{
-					sample = sampleBuffer[k][j] * SAMPLE_SCALE;	// crude, non-rounding 			
+					sample = sampleBuffer[k][j].toLong(); //* SAMPLE_SCALE;	// crude, non-rounding 			
 					sample = sample >> (32 - inputWAVhdr.fmt.BitsPerSample);
 					fwrite(&sample, outputWAVhdr.fmt.BitsPerSample / 8, 1, wav_out);
 				}
@@ -143,66 +110,3 @@ DSPint main(DSPint argc, char* argv[])
 	return 0;
 }
 
-void processing()
-{
-	DSPfract* p;
-
-	for (p = *sampleBuffer; p < sampleBuffer[0] + BLOCK_SIZE; p++)
-	{
-		*p = *p * dB2double;
-		*(p + 16) = *(p + 16) * dB2double;
-	}
-
-	if (mode == MODE_1)
-	{
-		input = left;
-		output = left_s;
-		processBlock();
-
-		input = right;
-		output = right_s;
-		processBlock();
-	}
-}
-
-void init() {
-
-	// Set default values:
-	tremolo.LFO_frequency = 2.0;
-	tremolo.depth = 1.0;
-	tremolo.lfoPhase = 0.0;
-	tremolo.inverseSampleRate = 1.0 / SAMPLE_RATE;
-}
-
-void processBlock() {
-
-//	DSPfract ph;
-
-	// Make a temporary copy of any state variables which need to be
-	// maintained between calls to processBlock(). Each channel needs to be processed identically
-	// which means that the activity of processing one channel can't affect the state variable for
-	// the next channel.
-	phase = tremolo.lfoPhase;
-
-	for (DSPint i = 0; i < BLOCK_SIZE; ++i)
-	{
-		const DSPfract in = input[i];
-
-		// Ring modulation is easy! Just multiply the waveform by a periodic carrier
-		output[i] = in * (1.0f - tremolo.depth * gen_sine_wave());
-
-		// Update the carrier and LFO phases, keeping them in the range 0-1
-		phase += tremolo.LFO_frequency * tremolo.inverseSampleRate;
-		if (phase >= 1.0)
-			phase -= 1.0;
-	}
-
-	// Having made a local copy of the state variables for each channel, now transfer the result
-	// back to the main state variable so they will be preserved for the next call of processBlock()
-	tremolo.lfoPhase = phase;
-}
-
-DSPfract gen_sine_wave()
-{
-	return 0.5f + 0.5f * sinf(2.0 * PI * phase);
-}
