@@ -1,1 +1,2 @@
-    Max difference is 4646195 (23 bits, -11.15dB)
+    Recorded file is 2880000 samples shorter than the reference file!
+    Max difference is 16776762 (24 bits, -0.00dB)

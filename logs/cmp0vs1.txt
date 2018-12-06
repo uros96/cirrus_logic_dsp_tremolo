@@ -1,1 +1,1 @@
-      No differences encountered!
+    Max difference is 16776762 (24 bits, -0.00dB)

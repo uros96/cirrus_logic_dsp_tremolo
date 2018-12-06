@@ -1,4 +1,6 @@
 ﻿  main.cpp
-d:\ra179\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(117): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\ra179\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(100): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'DSPfract'
+d:\ra179\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(107): warning C4390: ';': empty controlled statement found; is this the intent?
+d:\ra179\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(119): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   model_2.vcxproj -> D:\ra179\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.exe
   model_2.vcxproj -> D:\ra179\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.pdb (Full PDB)
