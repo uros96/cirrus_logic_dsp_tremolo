@@ -1,4 +1,4 @@
 ﻿  main.cpp
-c:\users\uros\desktop\aadsp2-projekat\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(113): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  model_2.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.exe
-  model_2.vcxproj -> C:\Users\Uros\Desktop\AADSP2-projekat\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.pdb (Full PDB)
+d:\ra179\cirrus_logic_dsp_tremolo\model_2\model_2\model_2.h(117): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  model_2.vcxproj -> D:\ra179\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.exe
+  model_2.vcxproj -> D:\ra179\cirrus_logic_dsp_tremolo\model_2\Debug\model_2.pdb (Full PDB)

@@ -50,11 +50,12 @@ void processing()
 
 	for (p = *sampleBuffer; p < *sampleBuffer + BLOCK_SIZE; p++)
 	{
-		*p = *p * dB2double;
-//		 = temp;
+		temp = *p * dB2double;
+		*p = temp;
 		p = p + BLOCK_SIZE;
-//		temp = *p * dB2double;
-		*p = *p * dB2double; //temp;
+
+		temp = *p * dB2double;
+		*p = temp; //temp;
 		p = p - BLOCK_SIZE;
 	}
 
@@ -73,7 +74,9 @@ void processing()
 void init()
 {
 	// Set default values:
-	tremolo.LFO_frequency = (DSPfract)(((DSPint)2.0) << 1);
+	tremolo.LFO_frequency = FRACT_NUM(1.0) << 1;
+	tremolo.LFO_frequency = tremolo.LFO_frequency + (FRACT_NUM(1.0) << 1);
+		//(DSPfract)(((DSPint)2.0) << 1);
 	tremolo.depth = FRACT_NUM(1.0);
 	tremolo.lfoPhase = FRACT_NUM(0.0);
 	tremolo.inverseSampleRate = 1.0 / SAMPLE_RATE;
@@ -96,6 +99,7 @@ void processBlock()
 		// Ring modulation is easy! Just multiply the waveform by a periodic carrier
 		output[i] = (1.0f - tremolo.depth * gen_sine_wave(ph)) * in;
 		// Update the carrier and LFO phases, keeping them in the range 0-1
+		tremolo.LFO_frequency = tremolo.LFO_frequency + tremolo.LFO_frequency;
 		ph = ph + tremolo.LFO_frequency * tremolo.inverseSampleRate;
 		if (ph >= FRACT_NUM(1.0))
 			ph = ph - FRACT_NUM(1.0);
